@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppAdminRoutes } from './admin/app-constants/routes';
+import { BackofficeGuard } from './admin/app-guards/backoffice-guard.service';
 import { AppCustomerRoutes } from './customer/app-constants/routes';
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   },
   {
     path: AppAdminRoutes.backoffice,
+    canActivate: [BackofficeGuard],
     loadChildren: () =>
       import('./admin/app-pages/backoffice/backoffice.module').then(
         (m) => m.BackofficeModule

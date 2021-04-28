@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Store, StoreConfig } from '@datorama/akita';
 
 export interface JwtState {
-  token?: string;
+  token?: string | null;
 }
 
 export function createInitialState(): JwtState {
