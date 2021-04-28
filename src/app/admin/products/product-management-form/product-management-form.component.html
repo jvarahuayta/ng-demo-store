@@ -1,0 +1,32 @@
+<form [formGroup]="productFG" (submit)="handleSubmit()">
+  <mat-form-field>
+    <mat-label>Nombre</mat-label>
+    <input type="text" matInput formControlName="name">
+    <mat-error>Nombre inválido</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Descripción</mat-label>
+    <textarea matInput formControlName="description"></textarea>
+    <mat-error>Descripción inválida</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Precio</mat-label>
+    <span matPrefix>S/ &nbsp;</span>
+    <input type="number" matInput formControlName="price">
+    <mat-error>Precio inválido</mat-error>
+  </mat-form-field>
+  <ng-container *ngIf="portraitUrl$|async as portraitUrl">
+    <img [src]="portraitUrl" alt="portada">
+    <br>
+  </ng-container>
+  <button mat-button color="primary" type="button" (click)="portraitInputRef.click()">
+    <mat-icon>upload</mat-icon>
+    <span>Cargar portada</span>
+  </button>
+  <mat-error *ngIf="portraitHasError$|async">Portada requerida</mat-error>
+  <input #portraitInputRef type="file" (change)="handlePortraitChange($event.target)">
+  <br>
+  <button mat-raised-button color="primary">
+    Guardar
+  </button>
+</form>

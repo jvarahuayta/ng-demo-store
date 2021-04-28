@@ -1,0 +1,13 @@
+.backoffice-page {
+	&__navbar {
+		display: flex;
+		flex: 1;
+		margin-left: 15px;
+	}
+	&__content {
+		padding: 15px;
+	}
+	&__logout {
+		margin-left: auto;
+	}
+}

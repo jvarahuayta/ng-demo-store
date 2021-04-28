@@ -1,0 +1,34 @@
+<app-page class="products-list-page">
+  <ng-container *ngIf="products$|async as products">
+    <ng-container *ngIf="products.length>0; else emptyRef">
+      <ul>
+        <li *ngFor="let item of products">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>{{item.name}}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image [src]="item.portraitUrl|bypassSecurityTrustUrl" [alt]="'foto '+item.name">
+            <mat-card-content>
+              <p>
+                {{item.description}}
+              </p>
+            </mat-card-content>
+            <mat-card-actions align="end">
+              <button mat-button color="warn" (click)="handleDelete(item)">Eliminar</button>
+              <button mat-button [routerLink]="item.id">Editar</button>
+            </mat-card-actions>
+          </mat-card>
+        </li>
+      </ul>
+      <button class="products-list-page__add" mat-fab color="primary" aria-label="Agregar producto" routerLink="nuevo">
+        <mat-icon>add</mat-icon>
+      </button>
+    </ng-container>
+    <ng-template #emptyRef>
+      <div class="empty">
+        <h1>Sin productos</h1>
+        <button mat-button routerLink="nuevo">Agregar producto</button>
+      </div>
+    </ng-template>
+  </ng-container>
+</app-page>

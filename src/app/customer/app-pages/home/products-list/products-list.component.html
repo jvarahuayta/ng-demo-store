@@ -1,0 +1,20 @@
+<ul>
+  <li *ngFor="let item of products$|async">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{item.name}}</mat-card-title>
+      </mat-card-header>
+      <div mat-card-image>
+        <img [src]="item.portraitUrl|bypassSecurityTrustUrl" [alt]="'foto '+item.name">
+        <button mat-fab color="accent" aria-label="like producto" (click)="handleLike(item)" [matBadge]="item.likes||0">
+          <mat-icon>favorite</mat-icon>
+        </button>
+      </div>
+      <mat-card-content>
+        <p>
+          {{item.description}}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </li>
+</ul>

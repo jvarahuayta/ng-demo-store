@@ -1,0 +1,16 @@
+<form [formGroup]="loginFG" (submit)="handleSubmit()">
+  <mat-form-field>
+    <mat-label>Correo electrónico</mat-label>
+    <input type="email" matInput formControlName="email">
+    <mat-error>Correo inválido</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Contraseña</mat-label>
+    <input type="password" matInput formControlName="password">
+    <mat-error>Contraseña inválida</mat-error>
+  </mat-form-field>
+  <br>
+  <button mat-raised-button color="primary">
+    Ingresar
+  </button>
+</form>

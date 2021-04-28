@@ -1,0 +1,16 @@
+<app-page class="backoffice-page">
+  <mat-toolbar color="primary">
+    <h1>Backoffice</h1>
+    <div class="backoffice-page__navbar">
+      <button mat-button routerLink="productos">
+        Productos
+      </button>
+    </div>
+    <button mat-button class="backoffice-page__logout" (click)="handleLogout()">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div class="backoffice-page__content">
+    <router-outlet></router-outlet>
+  </div>
+</app-page>

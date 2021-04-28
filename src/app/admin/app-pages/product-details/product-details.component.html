@@ -1,0 +1,6 @@
+<app-page>
+  <mat-card>
+    <app-product-management-form [id]="activatedRoute.snapshot.params.id" (submitSuccess)="handleSuccess()">
+    </app-product-management-form>
+  </mat-card>
+</app-page>

@@ -1,0 +1,30 @@
+.products-list-page {
+	.empty {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+	}
+
+	ul {
+		display: grid;
+		list-style: none;
+		padding: 0;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-column-gap: 20px;
+		grid-row-gap: 20px;
+		mat-card {
+			img {
+				display: block;
+				height: 180px;
+				object-fit: cover;
+				object-position: top center;
+			}
+		}
+	}
+
+	&__add {
+		bottom: 20px;
+		position: fixed;
+		right: 20px;
+	}
+}

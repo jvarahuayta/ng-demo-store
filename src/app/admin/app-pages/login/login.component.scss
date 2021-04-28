@@ -1,0 +1,9 @@
+.login-page {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	&__form {
+		width: 100%;
+		max-width: 400px;
+	}
+}

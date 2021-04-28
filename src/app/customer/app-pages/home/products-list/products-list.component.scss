@@ -1,0 +1,31 @@
+ul {
+	display: grid;
+	list-style: none;
+	padding: 0;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+	mat-card {
+		[mat-card-image] {
+			position: relative;
+			img {
+				display: block;
+				height: 180px;
+				object-fit: cover;
+				object-position: top center;
+				width: 100%;
+			}
+			button {
+				bottom: 10px;
+				position: absolute;
+				right: 10px;
+				::ng-deep {
+					.mat-badge-content {
+						right: -6px;
+						top: -6px;
+					}
+				}
+			}
+		}
+	}
+}

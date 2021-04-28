@@ -1,0 +1,12 @@
+form {
+	display: flex;
+	flex-direction: column;
+	input[type=file] {
+		display: none;
+	}
+	img {
+		display: inline-block;
+		margin: 0 auto;
+		height: 180px;
+	}
+}
