@@ -18,9 +18,6 @@ export class UpsertProductUsecase
   constructor(private productsStore: ProductsStore) {}
   execute(request: UpsertProductUsecaseReq): Observable<ProductModel> {
     const entity: ProductModel = { ...omit(request, ['portraitFile']) };
-    if (request.portraitFile) {
-      entity.portraitUrl = URL.createObjectURL(request.portraitFile);
-    }
     if (!request.id) {
       entity.id = uuid();
       this.productsStore.add({ ...entity });
